@@ -1,0 +1,36 @@
+[boost]
+  url=git@github.com:motis-project/boost.git
+  branch=master
+  commit=be5235eb2258d2ec19e32546ab767a62311d9b46
+[cista]
+  url=git@github.com:felixguendling/cista.git
+  branch=master
+  commit=79af417e82f621d0c8f4707474d0f3cea5934889
+[geo]
+  url=git@github.com:motis-project/geo.git
+  branch=master
+  commit=73e4f6fb9b80b178413cf7d9006501e231d41885
+[googletest]
+  url=git@github.com:motis-project/googletest.git
+  branch=master
+  commit=34a46558609e05865c197f0260ab36daa7cbbb6e
+[nigiri]
+  url=git@github.com:motis-project/nigiri.git
+  branch=master
+  commit=260eff7fa7751cbf601357f4b8632133a9277733
+[osmium]
+  url=git@github.com:motis-project/libosmium.git
+  branch=master
+  commit=6e6d6b3081cc8bdf25dda89730e25c36eb995516
+[ppr]
+  url=git@github.com:motis-project/ppr.git
+  branch=master
+  commit=a8c63de7d5c61ed3a3554d9d6f22cbe01046ee4d
+[utl]
+  url=git@github.com:motis-project/utl.git
+  branch=master
+  commit=98387d1bc2e3c57ab1c5bc6a8e1642931472886b
+[unordered_dense]
+  url=git@github.com:motis-project/unordered_dense.git
+  branch=main
+  commit=77e91016354e6d8cba24a86c5abb807de2534c02
