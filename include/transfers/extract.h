@@ -6,6 +6,7 @@
 
 namespace transfers {
 
-database parse(std::filesystem::path const&);
+database extract(std::filesystem::path const& in_path,
+                 std::filesystem::path const& tmp_path);
 
 }  // namespace transfers

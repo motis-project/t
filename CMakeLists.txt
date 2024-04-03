@@ -60,7 +60,14 @@ endif()
 file(GLOB_RECURSE transfers-files src/*.cc)
 add_library(transfers ${transfers-files})
 target_include_directories(transfers PUBLIC include)
-target_link_libraries(transfers PUBLIC unordered_dense nigiri utl ppr-routing osmium)
+target_link_libraries(transfers PUBLIC
+    tiles-import-library
+    unordered_dense
+    nigiri
+    utl
+    ppr-routing
+    osmium
+    rtree)
 target_compile_features(transfers PUBLIC cxx_std_23)
 target_compile_options(transfers PRIVATE ${transfers-compile-options})
 

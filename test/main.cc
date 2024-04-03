@@ -16,9 +16,5 @@ int main(int argc, char** argv) {
   fs::current_path(NIGIRI_TEST_EXECUTION_DIR);
 
   ::testing::InitGoogleTest(&argc, argv);
-  auto test_result = RUN_ALL_TESTS();
-
-  google::protobuf::ShutdownProtobufLibrary();
-
-  return test_result;
+  return RUN_ALL_TESTS();
 }

@@ -29,8 +29,16 @@
 [utl]
   url=git@github.com:motis-project/utl.git
   branch=master
-  commit=98387d1bc2e3c57ab1c5bc6a8e1642931472886b
+  commit=b81cfdccda166cef3c20dd41b4c9697b4137cea4
 [unordered_dense]
   url=git@github.com:motis-project/unordered_dense.git
   branch=main
   commit=77e91016354e6d8cba24a86c5abb807de2534c02
+[rtree.c]
+  url=git@github.com:triptix-tech/rtree.c.git
+  branch=master
+  commit=498f993c38e80f21d55ab72f14675b72fca991cc
+[tiles]
+  url=git@github.com:motis-project/tiles.git
+  branch=master
+  commit=8b1d2aedd7b1a5fcee248af16738df605bd86451
