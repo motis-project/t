@@ -41,12 +41,12 @@ struct rtree_index {
     auto udata = udata_t{&pos, radius, &results};
     rtree_search(
         rtree_, min.data(), max.data(),
-        [](double const* min, double const* /* max */, void const* item,
-           void* udata) {
+        [](double const* min_entry, double const* /* max */, void const* item,
+           void* udata_ptr) {
           auto const [p, r, rtree_results_ptr] =
-              *reinterpret_cast<udata_t const*>(udata);
+              *reinterpret_cast<udata_t const*>(udata_ptr);
 
-          if (geo::distance(*p, {min[1], min[0]}) > r) {
+          if (geo::distance(*p, {min_entry[1], min_entry[0]}) > r) {
             return true;
           }
 

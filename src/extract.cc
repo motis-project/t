@@ -3,6 +3,8 @@
 #include <array>
 #include <string_view>
 
+#include "fmt/std.h"
+
 #include "utl/parser/arg_parser.h"
 #include "utl/progress_tracker.h"
 #include "utl/zip.h"
@@ -46,8 +48,8 @@ bool strings_equals(A&& a, B&& b) {
   if (a.size() != b.size()) {
     return false;
   }
-  for (auto const [x, y] : utl::zip(a, b)) {
-    if (x.view() != y.view()) {
+  for (auto i = 0U; i != a.size(); ++i) {
+    if (a[i].view() != b[i].view()) {
       return false;
     }
   }
@@ -172,17 +174,16 @@ database extract(std::filesystem::path const& in_path,
     node_idx_builder.dump_stats();
   }
 
-  auto areas_mutex = std::mutex{};
   auto mp_queue = tiles::in_order_queue<osm_mem::Buffer>{};
   auto db = database{};
   {  // Extract streets, places, and areas.
     pt->status("Load OSM / Pass 2");
     auto const thread_count =
-        std::max(2, static_cast<int>(std::thread::hardware_concurrency()));
+        std::max(2U, std::thread::hardware_concurrency());
 
     // pool must be destructed before handlers!
-    auto pool = osmium::thread::Pool{thread_count,
-                                     static_cast<size_t>(thread_count * 8)};
+    auto pool = osmium::thread::Pool{static_cast<int>(thread_count),
+                                     static_cast<size_t>(thread_count * 8U)};
 
     auto reader = osm_io::Reader{input_file, pool, osmium::io::read_meta::no};
     auto seq_reader = tiles::sequential_until_finish<osm_mem::Buffer>{[&] {
@@ -193,8 +194,8 @@ database extract(std::filesystem::path const& in_path,
     auto has_exception = std::atomic_bool{false};
     auto workers = std::vector<std::future<void>>{};
     auto h = handler{db};
-    workers.reserve(thread_count / 2);
-    for (auto i = 0; i < thread_count / 2; ++i) {
+    workers.reserve(thread_count / 2U);
+    for (auto i = 0U; i != thread_count / 2U; ++i) {
       workers.emplace_back(pool.submit([&] {
         try {
           while (true) {

@@ -9,7 +9,7 @@
 [geo]
   url=git@github.com:motis-project/geo.git
   branch=master
-  commit=73e4f6fb9b80b178413cf7d9006501e231d41885
+  commit=ee76668f0f0454e4acd3c769e00c6868620e3490
 [googletest]
   url=git@github.com:motis-project/googletest.git
   branch=master
@@ -17,7 +17,7 @@
 [nigiri]
   url=git@github.com:motis-project/nigiri.git
   branch=master
-  commit=260eff7fa7751cbf601357f4b8632133a9277733
+  commit=7f0c17b2d363a400cfad191795fb543d7b28b68f
 [osmium]
   url=git@github.com:motis-project/libosmium.git
   branch=master
@@ -29,7 +29,7 @@
 [utl]
   url=git@github.com:motis-project/utl.git
   branch=master
-  commit=b81cfdccda166cef3c20dd41b4c9697b4137cea4
+  commit=6d33bb24d5058ebfe07be57588f211afacab2e15
 [unordered_dense]
   url=git@github.com:motis-project/unordered_dense.git
   branch=main
@@ -41,4 +41,4 @@
 [tiles]
   url=git@github.com:motis-project/tiles.git
   branch=master
-  commit=8b1d2aedd7b1a5fcee248af16738df605bd86451
+  commit=1b99290ba3ff16144afcdb04f6ca4e593d361c70

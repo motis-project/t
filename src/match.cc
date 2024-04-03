@@ -36,9 +36,9 @@ void match(n::timetable const& tt, database& db) {
     platform_rtree.add(platform_idx, {pos.lat(), pos.lon()});
   }
 
-  for (auto const& [idx, x] : utl::enumerate(db.platforms_)) {
+  for (auto const [idx, x] : utl::enumerate(db.platforms_)) {
     std::string name;
-    for (auto const& s : db.platform_names_[platform_idx_t{idx}]) {
+    for (auto const s : db.platform_names_[platform_idx_t{idx}]) {
       name += std::string{s.view()} + ", ";
     }
     std::cout << fmt::format(
