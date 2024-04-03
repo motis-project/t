@@ -161,7 +161,7 @@ database extract(std::filesystem::path const& in_path,
     pt->status("Load OSM / Pass 1");
     auto node_idx_builder = tiles::hybrid_node_idx_builder{node_idx};
 
-    auto reader = osm_io::Reader{input_file, osm_eb::node | osm_eb::relation,
+    auto reader = osm_io::Reader{input_file, osm_eb::node,
                                  osmium::io::read_meta::no};
     while (auto buffer = reader.read()) {
       pt->update(reader.offset());
